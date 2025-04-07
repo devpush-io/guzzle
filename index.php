@@ -12,10 +12,15 @@ $client = new GuzzleHttp\Client(['base_uri' => $apiUrl]);
 //$response = $client->get('todos/3');
 
 // Send POST request to add a new todo to JSON Placeholder API
-$response = $client->request(
-    'POST',
+$response = $client->post(
     'todos/add',
-    ['json' => ['todo' => 'This is a sample ToDo', 'userId' => 1, 'completed' => false]]
+    [
+        'json' => [
+            'todo' => 'This is a sample ToDo',
+            'userId' => 1,
+            'completed' => false
+        ]
+    ]
 );
 
 // Output API response
